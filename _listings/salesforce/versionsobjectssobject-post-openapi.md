@@ -3,11 +3,11 @@ swagger: "2.0"
 x-collection-name: Salesforce
 x-complete: 0
 info:
-  title: SalesForce Add Version Sobjects Sobject
+  title: Salesforce Sandbox Post Version Sobjects Sobject
   description: Creates a new object.
   version: 1.0.0
 host: na14.salesforce.com
-basePath: /services/data
+basePath: /services/data/
 schemes:
 - http
 produces:
@@ -15,13 +15,29 @@ produces:
 consumes:
 - application/json
 paths:
+  /:
+    get:
+      summary: Get
+      description: Lists summary information about each Salesforce version currently
+        available, including the version, label, and a link to each version's root.
+      operationId: get
+      x-api-path-slug: get
+      responses:
+        200:
+          description: OK
+      tags:
+      - ""
   /{version}:
     get:
       summary: Get Version
       description: Lists available resources for the specified API version, including
         resource name and URI.
-      operationId: version.get
+      operationId: getVersion
       x-api-path-slug: version-get
+      parameters:
+      - in: path
+        name: version
+        description: An API version
       responses:
         200:
           description: OK
@@ -34,8 +50,12 @@ paths:
         data. In addition, it provides the organization encoding, as well as maximum
         batch size permitted in queries. For more information, see Internationalization
         and Character Sets (http://www.salesforce.com/us/developer/docs/api/Content/implementation_considerations.htm#sforce_api_other_internationalization).
-      operationId: version.sobjects.get
+      operationId: getVersionSobjects
       x-api-path-slug: versionsobjects-get
+      parameters:
+      - in: path
+        name: version
+        description: An API version
       responses:
         200:
           description: OK
@@ -46,8 +66,15 @@ paths:
     get:
       summary: Get Version Sobjects Sobject
       description: Retrieves the metadata for an object.
-      operationId: version.sobjects.sobject.get
+      operationId: getVersionSobjectsSobject
       x-api-path-slug: versionsobjectssobject-get
+      parameters:
+      - in: path
+        name: sobject
+        description: A Salesforces object
+      - in: path
+        name: version
+        description: An API version
       responses:
         200:
           description: OK
@@ -56,10 +83,17 @@ paths:
       - Sobjects
       - Sobject
     post:
-      summary: Add Version Sobjects Sobject
+      summary: Post Version Sobjects Sobject
       description: Creates a new object.
-      operationId: version.sobjects.sobject.post
+      operationId: postVersionSobjectsSobject
       x-api-path-slug: versionsobjectssobject-post
+      parameters:
+      - in: path
+        name: sobject
+        description: A Salesforces object
+      - in: path
+        name: version
+        description: An API version
       responses:
         200:
           description: OK

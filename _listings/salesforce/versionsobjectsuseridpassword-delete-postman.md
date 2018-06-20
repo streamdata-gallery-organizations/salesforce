@@ -1,76 +1,16 @@
 {
   "info": {
-    "name": "Salesforce Sandbox Get Version Query",
-    "_postman_id": "f8dbde80-ec99-47e8-abb3-91585907d69c",
-    "description": "Retrieves the remaining SOQL query results using the identifier within the field \"nextRecordsUrl\" value (i.e. \"nextRecordsUrl\" : \"/services/data/v24.0/query/01gD0000002HU6KIAW-2000\") located at the end of the initial query results. Requests the next batch of records and you could repeat (using the corresponding identifier) until all records have been retrieved.",
+    "name": "Salesforce Sandbox Delete Version Sobjects User Password",
+    "_postman_id": "5a560e90-6339-4c08-b080-a17546eb3113",
+    "description": "Resets an user password. Salesforce will reset the user password to an auto-generated password, which will be returned in the response.",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/"
   },
   "item": [
     {
-      "name": "Folder",
-      "item": [
-        {
-          "id": "cb20f197-81c4-4bde-97a9-7ac1c0a8b890",
-          "name": "get",
-          "request": {
-            "url": "http://na14.salesforce.com/services/data/",
-            "method": "GET",
-            "body": {
-              "mode": "raw"
-            },
-            "description": "Lists summary information about each Salesforce version currently available, including the version, label, and a link to each version's root."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "6cb49d91-6838-4bd1-8a7c-1873682628e7"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Version",
       "item": [
         {
-          "id": "586a7f21-09ff-484b-b203-93364cc526aa",
-          "name": "getVersion",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "na14.salesforce.com",
-              "path": [
-                "services",
-                "data",
-                ":version"
-              ],
-              "variable": [
-                {
-                  "id": "version",
-                  "value": "{}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "GET",
-            "body": {
-              "mode": "raw"
-            },
-            "description": "Lists available resources for the specified API version, including resource name and URI."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "f16d62ba-7809-40c7-9778-58ddb7ab2888"
-            }
-          ]
-        },
-        {
-          "id": "e0395e15-1555-4929-8e06-61f86ac1f766",
+          "id": "bd898056-4c97-426a-9b3f-9084d43318ed",
           "name": "getVersionSobjects",
           "request": {
             "url": {
@@ -100,12 +40,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "2e431437-16f2-4a3a-9d5b-f3aa421c9950"
+              "id": "68928c95-6dc5-43eb-afb5-79f18be6c605"
             }
           ]
         },
         {
-          "id": "565c4e38-e242-42b9-9cce-f4092bfc2fb3",
+          "id": "6e090bd0-8e0a-46e3-afd4-cc22dfab29c1",
           "name": "getVersionSobjectsSobject",
           "request": {
             "url": {
@@ -140,12 +80,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "c6a76903-8e74-4ad5-8ede-15e9df37daa9"
+              "id": "55c8e820-1d6c-467d-a5d6-380706dbaceb"
             }
           ]
         },
         {
-          "id": "409e1ba6-3fdd-48ce-bd9a-325b50b3f6a7",
+          "id": "a25d314b-7625-4891-8fc1-300670448bd9",
           "name": "postVersionSobjectsSobject",
           "request": {
             "url": {
@@ -180,12 +120,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "4cb33fff-ce2b-455d-b181-6635e32dd8a7"
+              "id": "6f152edc-dfd4-4da9-9d63-7c93daf1544b"
             }
           ]
         },
         {
-          "id": "30e0d01d-448b-4201-9a75-6f67565f5c48",
+          "id": "98295287-65fe-4c10-b75c-32449221b443",
           "name": "getVersionSobjectsSobjectDescribe",
           "request": {
             "url": {
@@ -220,12 +160,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "1103b804-570f-47c8-aab0-aaef1aa94c53"
+              "id": "61168237-7fcb-4413-b851-2ed567d66606"
             }
           ]
         },
         {
-          "id": "8f2432be-7b95-4e32-93ba-5c96aa6c83b1",
+          "id": "3225286a-db88-4317-8bcc-b09ff12a5867",
           "name": "getVersionSobjectsSobject",
           "request": {
             "url": {
@@ -272,12 +212,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "0b0b8c31-35f8-4e0c-b1ff-3e6878adfbfd"
+              "id": "59d7f2db-1192-48a8-855c-986624a6f686"
             }
           ]
         },
         {
-          "id": "24eda733-8c88-4d9d-ad76-afd69fe5edf4",
+          "id": "39c83591-28bf-487a-9414-8ed9ba92ac58",
           "name": "deleteVersionSobjectsSobject",
           "request": {
             "url": {
@@ -317,12 +257,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "3e709738-17f2-4438-8d4d-3ec8f5f5fc9e"
+              "id": "3e90dfea-aa8e-42a6-89c4-77c68e29c16a"
             }
           ]
         },
         {
-          "id": "6bf00795-be1a-4904-adf3-f65c41ff6356",
+          "id": "8a8bbe3d-e73f-445b-95d5-b7f8adab6814",
           "name": "getVersionSobjectsSobjectBlobfield",
           "request": {
             "url": {
@@ -374,12 +314,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "d14e41f1-d6eb-4a75-bd54-d8499711df9b"
+              "id": "5d823668-005a-427b-a422-54b63a503144"
             }
           ]
         },
         {
-          "id": "085de3f4-1dc8-4ea5-a3e3-a18d91b570a5",
+          "id": "de60f89a-7fa6-49e9-9b50-3d598e17d84c",
           "name": "getVersionSobjectsUserPassword",
           "request": {
             "url": {
@@ -414,12 +354,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "ac9b90ce-582c-425f-9f67-e64bc45e735a"
+              "id": "170f1281-7ff8-473d-855c-be6288ee017c"
             }
           ]
         },
         {
-          "id": "2f45bc3a-6215-4b28-a19c-23e46cb4e71b",
+          "id": "02a090d9-ec52-402c-88ff-fd51125f9924",
           "name": "postVersionSobjectsUserPassword",
           "request": {
             "url": {
@@ -454,12 +394,12 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "e6fca020-9c6c-462b-9f46-14112ba9d5b3"
+              "id": "1238beec-c519-44f2-ab0b-73ba7e91b4ba"
             }
           ]
         },
         {
-          "id": "5b9d01e5-e0ec-416b-b163-740d912f11fe",
+          "id": "ad568eca-1a5a-437f-94ec-45fddc2ee547",
           "name": "deleteVersionSobjectsUserPassword",
           "request": {
             "url": {
@@ -494,89 +434,7 @@
               "status": "OK",
               "code": 200,
               "name": "Response_200",
-              "id": "c0b98824-3a5a-4619-ae7f-986a472d43d6"
-            }
-          ]
-        },
-        {
-          "id": "35a05526-5495-4e57-8755-0eadc95862d8",
-          "name": "getVersionQuery",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "na14.salesforce.com",
-              "path": [
-                "services",
-                "data",
-                ":version/query"
-              ],
-              "query": [
-                {
-                  "key": "q",
-                  "value": "%7B%7D",
-                  "disabled": false
-                }
-              ],
-              "variable": [
-                {
-                  "id": "version",
-                  "value": "{}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "GET",
-            "body": {
-              "mode": "raw"
-            },
-            "description": "Executes the specified SOQL query. If the initial query returns only part of the results, the end of the response will contain a field called nextRecordsUrl. In such cases, use the resource {version}/query/{id} to request the next batch of records and repeat until all records have been retrieved."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "54e06ccc-0d40-4b29-9588-0f01daf43369"
-            }
-          ]
-        },
-        {
-          "id": "af67250c-bd9f-46c9-acaf-329b826cd3b1",
-          "name": "getVersionQuery",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "host": "na14.salesforce.com",
-              "path": [
-                "services",
-                "data",
-                ":version/query/:id"
-              ],
-              "variable": [
-                {
-                  "id": "id",
-                  "value": "{}",
-                  "type": "string"
-                },
-                {
-                  "id": "version",
-                  "value": "{}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "GET",
-            "body": {
-              "mode": "raw"
-            },
-            "description": "Retrieves the remaining SOQL query results using the identifier within the field \"nextRecordsUrl\" value (i.e. \"nextRecordsUrl\" : \"/services/data/v24.0/query/01gD0000002HU6KIAW-2000\") located at the end of the initial query results. Requests the next batch of records and you could repeat (using the corresponding identifier) until all records have been retrieved."
-          },
-          "response": [
-            {
-              "status": "OK",
-              "code": 200,
-              "name": "Response_200",
-              "id": "a2fd45e9-13dc-46c8-b56b-dc576fb31f7c"
+              "id": "1baeb2fb-78e2-43c5-af55-8fe51d06eedd"
             }
           ]
         }

@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Salesforce
 x-complete: 0
 info:
-  title: Salesforce Sandbox Get Version
-  description: Lists available resources for the specified API version, including
-    resource name and URI.
+  title: Salesforce Sandbox Get
+  description: Lists summary information about each Salesforce version currently available,
+    including the version, label, and a link to each version's root.
   version: 1.0.0
 host: na14.salesforce.com
 basePath: /services/data/
@@ -28,22 +28,6 @@ paths:
           description: OK
       tags:
       - ""
-  /{version}:
-    get:
-      summary: Get Version
-      description: Lists available resources for the specified API version, including
-        resource name and URI.
-      operationId: getVersion
-      x-api-path-slug: version-get
-      parameters:
-      - in: path
-        name: version
-        description: An API version
-      responses:
-        200:
-          description: OK
-      tags:
-      - Version
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
