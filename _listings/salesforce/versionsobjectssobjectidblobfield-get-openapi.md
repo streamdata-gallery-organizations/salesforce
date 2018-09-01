@@ -16,18 +16,6 @@ produces:
 consumes:
 - application/json
 paths:
-  /:
-    get:
-      summary: Get
-      description: Lists summary information about each Salesforce version currently
-        available, including the version, label, and a link to each version's root.
-      operationId: get
-      x-api-path-slug: get
-      responses:
-        200:
-          description: OK
-      tags:
-      - ""
   /{version}:
     get:
       summary: Get Version
@@ -205,6 +193,109 @@ paths:
       - Sobjects
       - Sobject
       - Blobfield
+  /{version}/sobjects/User/{id}/password:
+    get:
+      summary: Get Version Sobjects User  Password
+      description: Gets password expiration status for a given user. The session must
+        have permission to access the given user password information, otherwise an
+        error response is returned.
+      operationId: version.sobjects.User.id.password.get
+      x-api-path-slug: versionsobjectsuseridpassword-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Sobjects
+      - User
+      - ""
+      - Password
+    post:
+      summary: Add Version Sobjects User  Password
+      description: Changes the password for a given user ID. The new password must
+        conform to the password policies for the organization, otherwise you will
+        get an error response. You can only change one password per request.
+      operationId: version.sobjects.User.id.password.post
+      x-api-path-slug: versionsobjectsuseridpassword-post
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Sobjects
+      - User
+      - ""
+      - Password
+    delete:
+      summary: Delete Version Sobjects User  Password
+      description: Resets an user password. Salesforce will reset the user password
+        to an auto-generated password, which will be returned in the response.
+      operationId: version.sobjects.User.id.password.delete
+      x-api-path-slug: versionsobjectsuseridpassword-delete
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Sobjects
+      - User
+      - ""
+      - Password
+  /{version}/query:
+    get:
+      summary: Get Version Query
+      description: Executes the specified SOQL query. If the initial query returns
+        only part of the results, the end of the response will contain a field called
+        nextRecordsUrl. In such cases, use the resource {version}/query/{id} to request
+        the next batch of records and repeat until all records have been retrieved.
+      operationId: version.query.get
+      x-api-path-slug: versionquery-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Query
+  /{version}/query/{id}:
+    get:
+      summary: Get Version Query
+      description: 'Retrieves the remaining SOQL query results using the identifier
+        within the field "nextRecordsUrl" value (i.e. "nextRecordsUrl" : "/services/data/v24.0/query/01gD0000002HU6KIAW-2000")
+        located at the end of the initial query results. Requests the next batch of
+        records and you could repeat (using the corresponding identifier) until all
+        records have been retrieved.'
+      operationId: version.query.id.get
+      x-api-path-slug: versionqueryid-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Query
+  /{version}/search:
+    get:
+      summary: Get Version Search
+      description: Executes the specified SOSL search. The search string must be URL-encoded.
+      operationId: version.search.get
+      x-api-path-slug: versionsearch-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Search
+  /:
+    get:
+      summary: Get
+      description: Lists summary information about each Salesforce version currently
+        available, including the version, label, and a link to each version's root.
+      operationId: get
+      x-api-path-slug: get
+      responses:
+        200:
+          description: OK
+      tags:
+      - ""
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

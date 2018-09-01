@@ -19,18 +19,6 @@ produces:
 consumes:
 - application/json
 paths:
-  /:
-    get:
-      summary: Get
-      description: Lists summary information about each Salesforce version currently
-        available, including the version, label, and a link to each version's root.
-      operationId: get
-      x-api-path-slug: get
-      responses:
-        200:
-          description: OK
-      tags:
-      - ""
   /{version}:
     get:
       summary: Get Version
@@ -319,6 +307,30 @@ paths:
       tags:
       - Version
       - Query
+  /{version}/search:
+    get:
+      summary: Get Version Search
+      description: Executes the specified SOSL search. The search string must be URL-encoded.
+      operationId: version.search.get
+      x-api-path-slug: versionsearch-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Search
+  /:
+    get:
+      summary: Get
+      description: Lists summary information about each Salesforce version currently
+        available, including the version, label, and a link to each version's root.
+      operationId: get
+      x-api-path-slug: get
+      responses:
+        200:
+          description: OK
+      tags:
+      - ""
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

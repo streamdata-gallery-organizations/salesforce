@@ -1,4 +1,3 @@
----
 swagger: "2.0"
 x-collection-name: Salesforce
 x-complete: 1
@@ -15,18 +14,6 @@ produces:
 consumes:
 - application/json
 paths:
-  /:
-    get:
-      summary: Get
-      description: Lists summary information about each Salesforce version currently
-        available, including the version, label, and a link to each version's root.
-      operationId: get
-      x-api-path-slug: get
-      responses:
-        200:
-          description: OK
-      tags:
-      - ""
   /{version}:
     get:
       summary: Get Version
@@ -334,4 +321,15 @@ paths:
       tags:
       - Version
       - Search
----
+  /:
+    get:
+      summary: Get
+      description: Lists summary information about each Salesforce version currently
+        available, including the version, label, and a link to each version's root.
+      operationId: get
+      x-api-path-slug: get
+      responses:
+        200:
+          description: OK
+      tags:
+      - ""

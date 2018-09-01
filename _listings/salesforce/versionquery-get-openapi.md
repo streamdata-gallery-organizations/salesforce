@@ -18,18 +18,6 @@ produces:
 consumes:
 - application/json
 paths:
-  /:
-    get:
-      summary: Get
-      description: Lists summary information about each Salesforce version currently
-        available, including the version, label, and a link to each version's root.
-      operationId: get
-      x-api-path-slug: get
-      responses:
-        200:
-          description: OK
-      tags:
-      - ""
   /{version}:
     get:
       summary: Get Version
@@ -295,6 +283,46 @@ paths:
       tags:
       - Version
       - Query
+  /{version}/query/{id}:
+    get:
+      summary: Get Version Query
+      description: 'Retrieves the remaining SOQL query results using the identifier
+        within the field "nextRecordsUrl" value (i.e. "nextRecordsUrl" : "/services/data/v24.0/query/01gD0000002HU6KIAW-2000")
+        located at the end of the initial query results. Requests the next batch of
+        records and you could repeat (using the corresponding identifier) until all
+        records have been retrieved.'
+      operationId: version.query.id.get
+      x-api-path-slug: versionqueryid-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Query
+  /{version}/search:
+    get:
+      summary: Get Version Search
+      description: Executes the specified SOSL search. The search string must be URL-encoded.
+      operationId: version.search.get
+      x-api-path-slug: versionsearch-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Version
+      - Search
+  /:
+    get:
+      summary: Get
+      description: Lists summary information about each Salesforce version currently
+        available, including the version, label, and a link to each version's root.
+      operationId: get
+      x-api-path-slug: get
+      responses:
+        200:
+          description: OK
+      tags:
+      - ""
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

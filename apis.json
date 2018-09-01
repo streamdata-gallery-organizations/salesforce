@@ -1,0 +1,33 @@
+{
+	"name": "Streadata.io API Gallery - Salesforce",
+	"description": "This is a repository of salesforce APIs, self-contained as a Github repository, with HTML and YAML representations of the APIs and their surrounding operations.",
+	"image": "http://template.streamdata.gallery/assets/salesforce.png",
+	"created": "2018-02-24",
+	"modified": "2018-08-31",
+	"url": "http://salesforce.streamdata.gallery/apis.json",
+	"specificationVersion": "0.14",
+	"apis": [
+		{
+			"name": "Salesforce",
+			"x-api-slug": "salesforce",
+			"description": "Build more meaningful and lasting relationships and connect with your customers across sales, customer service, marketing, communities, apps, analytics, and more using our Customer Success Platform. Try for Free.",
+			"image": "http://kinlane-productions.s3.amazonaws.com/screen-capture-api/175-salesforce.jpg",
+			"humanURL": "http://developer.salesforce.com",
+			"baseURL": "https://na14.salesforce.com//services/data/",
+			"tags": "Salesforce",
+			"properties": [
+				{
+					"type": "x-openapi-spec",
+					"url": "https://raw.githubusercontent.com/streamdata-gallery-organizations/salesforce/master/_listings/salesforce/openapi.md"
+				}
+			]
+		}
+	],
+	"tags": "Salesforce",
+	"include": [
+		{
+			"name": "Salesforce",
+			"url": "https://raw.githubusercontent.com/streamdata-gallery-organizations/salesforce/master/_listings/salesforce/apis.yaml"
+		}
+	]
+}
